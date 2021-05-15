@@ -3,8 +3,8 @@ COPY requirements.txt /tmp/requirements.txt
 
 USER root
 
-RUN  pip install --upgrade pip \
-     && pip install -r /tmp/requirements.txt
+RUN  pip install --upgrade pip --trusted-host pypi.org --trusted-host files.pythonhosted.org \
+     && pip install -r /tmp/requirements.txt --trusted-host pypi.org --trusted-host files.pythonhosted.org
 
 EXPOSE 8080
 
